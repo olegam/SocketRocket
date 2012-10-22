@@ -139,7 +139,7 @@
         return;
     }
     [aRun start];
-    for (int i = 1; i <= aRun.test.testCaseCount; i++) {
+    for (NSUInteger i = 1; i <= aRun.test.testCaseCount; i++) {
         SEL sel = @selector(performTestWithNumber:);
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[[self class] instanceMethodSignatureForSelector:sel]];
         
@@ -159,8 +159,6 @@
         for (NSException *e in run.exceptions) {
             [aRun addException:e];
         }
-        
-//        [aRun ]
     }
     [aRun stop];
     
